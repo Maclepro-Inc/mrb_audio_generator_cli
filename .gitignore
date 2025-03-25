@@ -160,6 +160,9 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# .idea
+.idea/
+
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
@@ -172,3 +175,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+.idea/
+src/**.zip
+
+poetry.lock
+*.lock
+.vscode/settings.json
+src/config/local.toml
+.venv
