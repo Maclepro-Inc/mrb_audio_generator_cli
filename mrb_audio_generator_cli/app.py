@@ -11,7 +11,7 @@ class DialogueAudioGenerator:
     def __init__(self, lang_code='a'):
         self.pipeline = KPipeline(lang_code=lang_code)
         self.characters = [
-            {"id": "TEST-NARRATOR-001", "codename": "Operator", "name": "Lewis Carr", "voice": "bf_alice", "speed": 1.0}
+            {"id": "TEST-NARRATOR-001", "codename": "Operator", "name": "Lewis Carr", "voice": "bf_alice", "speed": 0.7}
         ]
 
     def create_directories_and_generate_audio(self, pattern='Dialogues*.json'):
@@ -30,6 +30,7 @@ class DialogueAudioGenerator:
                 continue
 
             for idx, item in enumerate(dialogues, 1):
+                logging.info(f"Dialogues: {idx} - {item}")
                 matching_chars = [char for char in self.characters if char["id"] == item["id"]]
                 if not matching_chars:
                     logging.warning(f'Character ID {item["id"]} not found in characters list.')
